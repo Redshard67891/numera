@@ -3,7 +3,6 @@ import Hero from '@/components/landing/Hero';
 import Services from '@/components/landing/Services';
 import About from '@/components/landing/About';
 import Testimonials from '@/components/landing/Testimonials';
-import Blog from '@/components/landing/Blog';
 import Contact from '@/components/landing/Contact';
 import Footer from '@/components/landing/Footer';
 
@@ -16,7 +15,6 @@ export default function Home() {
         <Services />
         <About />
         <Testimonials />
-        <Blog />
         <Contact />
       </main>
       <Footer />
