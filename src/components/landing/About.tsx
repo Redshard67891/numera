@@ -25,7 +25,7 @@ export default function About() {
           </div>
           <div className="order-1 lg:order-2">
             <Image
-              src="https://placehold.co/800x600.png"
+              src="https://picsum.photos/800/600"
               alt="Numera team discussion"
               data-ai-hint="team meeting"
               width={800}

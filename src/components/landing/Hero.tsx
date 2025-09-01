@@ -25,7 +25,7 @@ export default function Hero() {
           </div>
           <div className="relative h-64 w-full lg:h-auto lg:aspect-square">
             <Image
-              src="https://placehold.co/800x800.png"
+              src="https://picsum.photos/800/800"
               alt="Financial charts and graphs"
               data-ai-hint="financial analytics"
               fill
