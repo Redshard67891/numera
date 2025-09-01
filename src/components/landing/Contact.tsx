@@ -148,8 +148,8 @@ export default function Contact() {
                 </div>
                <div>
                  <h3 className="text-lg font-semibold">Office</h3>
-                 <p className="text-foreground/80">123 Finance Street, Suite 100</p>
-                 <p className="text-foreground/80">New York, NY 10001</p>
+                 <p className="text-foreground/80">274 Lynn Braxton St.</p>
+                 <p className="text-foreground/80">San Francisco, CA 94159</p>
                </div>
              </div>
           </div>
