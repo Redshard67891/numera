@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Scale } from 'lucide-react';
+import { Logo } from './Logo';
 
 export default function Footer() {
   return (
@@ -7,9 +7,8 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-8 md:px-6">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           <div>
-            <Link href="/" className="flex items-center gap-2 font-bold text-xl text-primary">
-              <Scale className="h-6 w-6" />
-              <span>Numera</span>
+            <Link href="/" className="flex items-center gap-2 text-primary">
+              <Logo className="h-10 w-auto" />
             </Link>
             <p className="mt-4 text-sm text-foreground/70">
               Your partner in financial success.

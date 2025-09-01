@@ -4,8 +4,9 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, Scale } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Logo } from './Logo';
 
 const navLinks = [
   { href: '#services', label: 'Services' },
@@ -33,9 +34,8 @@ export default function Header() {
       )}
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
-        <Link href="/" className="flex items-center gap-2 font-bold text-xl text-primary">
-          <Scale className="h-6 w-6" />
-          <span>Numera</span>
+        <Link href="/" className="flex items-center gap-2 text-primary">
+          <Logo className="h-10 w-auto" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-6">
@@ -61,9 +61,8 @@ export default function Header() {
             </SheetTrigger>
             <SheetContent side="right">
               <div className="flex flex-col gap-6 p-6">
-                <Link href="/" className="flex items-center gap-2 font-bold text-xl text-primary mb-4">
-                  <Scale className="h-6 w-6" />
-                  <span>Numera</span>
+                <Link href="/" className="flex items-center gap-2 text-primary mb-4">
+                  <Logo className="h-10 w-auto" />
                 </Link>
                 {navLinks.map((link) => (
                   <Link key={link.href} href={link.href} className="text-lg font-medium hover:text-primary">
