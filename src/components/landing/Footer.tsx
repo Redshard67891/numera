@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           <div>
             <Link href="/" className="flex items-center gap-2 text-primary">
-              <Image src="/numera.svg" alt="Numera Logo" width={244} height={70} className="h-16 w-auto" />
+              <Image src="/numera.svg" alt="Numera Logo" width={244} height={70} className="h-20 w-auto" />
             </Link>
             <p className="mt-4 text-sm text-foreground/70">
               Your partner in financial success.
