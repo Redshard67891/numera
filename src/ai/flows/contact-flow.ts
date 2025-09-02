@@ -9,6 +9,7 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
+import { Resend } from 'resend';
 
 const ContactMessageInputSchema = z.object({
   name: z.string().describe('The name of the person sending the message.'),
@@ -34,32 +35,26 @@ const contactFlow = ai.defineFlow(
     outputSchema: ContactMessageOutputSchema,
   },
   async (input) => {
-    // In a real application, you would integrate with an email service
-    // like SendGrid, Resend, or Nodemailer to send the email.
-    // For this example, we'll just log the intended action.
-    console.log(`Simulating sending email to info@numera.live:`);
-    console.log(`From: ${input.name} <${input.email}>`);
-    if(input.phone) {
-      console.log(`Phone: ${input.phone}`);
+    const resend = new Resend(process.env.RESEND_API_KEY);
+
+    try {
+      await resend.emails.send({
+        from: 'Contact Form <onboarding@resend.dev>',
+        to: 'info@numera.live',
+        subject: `New message from ${input.name}`,
+        html: `
+          <p>You received a new message from your website contact form.</p>
+          <p><strong>Name:</strong> ${input.name}</p>
+          <p><strong>Email:</strong> ${input.email}</p>
+          ${input.phone ? `<p><strong>Phone:</strong> ${input.phone}</p>` : ''}
+          <p><strong>Message:</strong></p>
+          <p>${input.message}</p>
+        `,
+      });
+      return { success: true };
+    } catch (error) {
+      console.error('Error sending email:', error);
+      return { success: false };
     }
-    console.log(`Message: ${input.message}`);
-
-    // Here, you would add the actual email sending logic.
-    // For example (using a hypothetical email service):
-    //
-    // import { Email } from "@third-party/email-service";
-    // await new Email({
-    //   to: "info@numera.live",
-    //   from: "contact-form@numera.live",
-    //   subject: `New message from ${input.name}`,
-    //   body: `
-    //     Name: ${input.name}
-    //     Email: ${input.email}
-    //     Phone: ${input.phone || 'Not provided'}
-    //     Message: ${input.message}
-    //   `,
-    // }).send();
-
-    return { success: true };
   }
 );
