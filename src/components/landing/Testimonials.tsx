@@ -6,24 +6,24 @@ import { motion } from "framer-motion";
 
 const testimonials = [
   {
-    quote: "Numera transformed our financial tracking. Their attention to detail and proactive advice has been invaluable for our growth.",
-    name: "Jane Doe",
-    title: "CEO, Tech Innovators",
-    avatar: "JD",
+    quote: "As a small business owner, I was overwhelmed with managing my accounts. Numera stepped in and took the stress off my shoulders. They organized my books, provided clear monthly reports, and helped me understand my cash flow. Now I can focus on growing my business knowing my finances are in good hands.",
+    name: "Alexander Hayes",
+    title: "Small Business Owner",
+    avatar: "AH",
     img: "https://picsum.photos/100/100?random=1"
   },
   {
-    quote: "Tax season is no longer a stressful time for us, thanks to Numera. Their expertise and efficiency are second to none.",
-    name: "John Smith",
-    title: "Founder, Creative Co.",
-    avatar: "JS",
+    quote: "I was spending too much time trying to handle payroll and taxes on my own. Numera not only streamlined the process but also identified cost-saving opportunities I hadn't considered. Their expertise saved me money and gave me back precious time to focus on my team and operations.",
+    name: "Sophia Bennett",
+    title: "Restaurant Owner",
+    avatar: "SB",
     img: "https://picsum.photos/100/100?random=2"
   },
   {
-    quote: "The payroll services are a lifesaver. Everything is handled flawlessly, which lets me focus on my actual business.",
-    name: "Samantha Lee",
-    title: "Owner, The Local Cafe",
-    avatar: "SL",
+    quote: "Tax season used to be a nightmare for me. Numera made it so simple. They ensured everything was accurate and filed on time, which saved me from penalties. Their team is professional, approachable, and always ready to answer my questions. I can’t imagine going through another tax season without them.",
+    name: "Nathaniel Reed",
+    title: "Freelance Designer",
+    avatar: "NR",
     img: "https://picsum.photos/100/100?random=3"
   }
 ];
