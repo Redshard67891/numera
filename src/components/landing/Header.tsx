@@ -35,7 +35,7 @@ export default function Header() {
     >
       <div className="container mx-auto flex h-24 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2 text-primary">
-          <Image src="/numera.svg" alt="Numera Logo" width={244} height={70} className="h-16 w-auto" />
+          <Image src="/numera.svg" alt="Numera Logo" width={244} height={70} className="h-12 w-auto" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-6">
@@ -48,7 +48,7 @@ export default function Header() {
 
         <div className="hidden md:block">
           <Button asChild variant="default" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-            <Link href="https://calendly.com/victordebelu/30min" target="_blank" rel="noopener noreferrer">Request a Consultation</Link>
+            <a href="https://calendly.com/victordebelu/30min" target="_blank" rel="noopener noreferrer">Request a Consultation</a>
           </Button>
         </div>
 
@@ -62,7 +62,7 @@ export default function Header() {
             <SheetContent side="right">
               <div className="flex flex-col gap-6 p-6">
                 <Link href="/" className="flex items-center gap-2 text-primary mb-4">
-                  <Image src="/numera.svg" alt="Numera Logo" width={244} height={70} className="h-16 w-auto" />
+                  <Image src="/numera.svg" alt="Numera Logo" width={244} height={70} className="h-12 w-auto" />
                 </Link>
                 {navLinks.map((link) => (
                   <Link key={link.href} href={link.href} className="text-lg font-medium hover:text-primary">
@@ -70,7 +70,7 @@ export default function Header() {
                   </Link>
                 ))}
                 <Button asChild variant="default" className="mt-4 bg-accent hover:bg-accent/90 text-accent-foreground">
-                  <Link href="https://calendly.com/victordebelu/30min" target="_blank" rel="noopener noreferrer">Request a Consultation</Link>
+                  <a href="https://calendly.com/victordebelu/30min" target="_blank" rel="noopener noreferrer">Request a Consultation</a>
                 </Button>
               </div>
             </SheetContent>
