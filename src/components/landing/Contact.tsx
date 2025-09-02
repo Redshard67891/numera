@@ -10,6 +10,9 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { useToast } from "@/hooks/use-toast";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { sendContactMessage } from "@/ai/flows/contact-flow";
+import type { ContactMessageInput } from "@/ai/flows/contact-flow";
+import React from "react";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -20,7 +23,9 @@ const formSchema = z.object({
 
 export default function Contact() {
   const { toast } = useToast();
-  const form = useForm<z.infer<typeof formSchema>>({
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  
+  const form = useForm<ContactMessageInput>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
@@ -30,14 +35,28 @@ export default function Contact() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    // Here you would typically send the form data to a server
-    toast({
-      title: "Message Sent!",
-      description: "Thanks for reaching out. We'll get back to you shortly.",
-    });
-    form.reset();
+  async function onSubmit(values: ContactMessageInput) {
+    setIsSubmitting(true);
+    try {
+      const result = await sendContactMessage(values);
+      if (result.success) {
+        toast({
+          title: "Message Sent!",
+          description: "Thanks for reaching out. We'll get back to you shortly.",
+        });
+        form.reset();
+      } else {
+        throw new Error("Failed to send message.");
+      }
+    } catch (error) {
+      toast({
+        title: "Oh no! Something went wrong.",
+        description: "There was a problem with your request. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -113,8 +132,8 @@ export default function Contact() {
                       </FormItem>
                     )}
                   />
-                  <Button type="submit" size="lg" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
-                    Send Message
+                  <Button type="submit" size="lg" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground" disabled={isSubmitting}>
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
                   </Button>
                 </form>
               </Form>
