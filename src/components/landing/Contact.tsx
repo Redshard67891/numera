@@ -9,7 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Calendar, MapPin } from "lucide-react";
 import { sendContactMessage } from "@/ai/flows/contact-flow";
 import type { ContactMessageInput } from "@/ai/flows/contact-flow";
 import React from "react";
@@ -153,12 +153,12 @@ export default function Contact() {
              </div>
              <div className="flex items-start gap-4">
                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                  <Phone className="h-6 w-6 text-primary" />
+                  <Calendar className="h-6 w-6 text-primary" />
                 </div>
                <div>
-                 <h3 className="text-lg font-semibold">Phone</h3>
-                 <p className="text-foreground/80">Give us a call during business hours.</p>
-                 <a href="tel:+1234567890" className="text-primary hover:underline">+1 (234) 567-890</a>
+                 <h3 className="text-lg font-semibold">Schedule A Meeting</h3>
+                 <p className="text-foreground/80">Let's connect! Book a time that works for you.</p>
+                 <a href="https://calendly.com/victordebelu/30min" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Book a meeting</a>
                </div>
              </div>
              <div className="flex items-start gap-4">
