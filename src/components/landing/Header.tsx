@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
@@ -34,15 +33,15 @@ export default function Header() {
       )}
     >
       <div className="container mx-auto flex h-24 items-center justify-between px-4 md:px-6">
-        <Link href="/" className="flex items-center gap-2 text-primary">
-          <Image src="/numera.svg" alt="Numera Logo" width={244} height={70} className="h-14 w-auto" />
-        </Link>
+        <a href="/" className="flex items-center gap-2 text-primary">
+          <Image src="/numera.svg" alt="Numera Logo" width={244} height={70} className="h-20 w-auto" />
+        </a>
 
         <nav className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="text-sm font-medium text-foreground/80 transition-colors hover:text-primary">
+            <a key={link.href} href={link.href} className="text-sm font-medium text-foreground/80 transition-colors hover:text-primary">
               {link.label}
-            </Link>
+            </a>
           ))}
         </nav>
 
@@ -61,13 +60,13 @@ export default function Header() {
             </SheetTrigger>
             <SheetContent side="right">
               <div className="flex flex-col gap-6 p-6">
-                <Link href="/" className="flex items-center gap-2 text-primary mb-4">
+                <a href="/" className="flex items-center gap-2 text-primary mb-4">
                   <Image src="/numera.svg" alt="Numera Logo" width={244} height={70} className="h-14 w-auto" />
-                </Link>
+                </a>
                 {navLinks.map((link) => (
-                  <Link key={link.href} href={link.href} className="text-lg font-medium hover:text-primary">
+                  <a key={link.href} href={link.href} className="text-lg font-medium hover:text-primary">
                     {link.label}
-                  </Link>
+                  </a>
                 ))}
                 <Button asChild variant="default" className="mt-4 bg-accent hover:bg-accent/90 text-accent-foreground">
                   <a href="https://calendly.com/victordebelu/30min" target="_blank" rel="noopener noreferrer">Request a Consultation</a>
