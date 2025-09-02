@@ -35,7 +35,7 @@ export default function Header() {
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2 text-primary">
-          <Image src="/1000071037.svg" alt="Logo" width={40} height={40} className="h-10 w-auto" />
+          <Image src="/1000071037.svg" alt="Logo" width={40} height={40} className="h-10 w-auto" priority />
         </Link>
 
         <nav className="hidden md:flex items-center gap-6">
@@ -48,7 +48,7 @@ export default function Header() {
 
         <div className="hidden md:block">
           <Button asChild variant="default" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-            <Link href="#contact">Request a Consultation</Link>
+            <Link href="https://calendly.com/victordebelu/30min" target="_blank" rel="noopener noreferrer">Request a Consultation</Link>
           </Button>
         </div>
 
@@ -62,7 +62,7 @@ export default function Header() {
             <SheetContent side="right">
               <div className="flex flex-col gap-6 p-6">
                 <Link href="/" className="flex items-center gap-2 text-primary mb-4">
-                  <Image src="/1000071037.svg" alt="Logo" width={40} height={40} className="h-10 w-auto" />
+                  <Image src="/1000071037.svg" alt="Logo" width={40} height={40} className="h-10 w-auto" priority />
                 </Link>
                 {navLinks.map((link) => (
                   <Link key={link.href} href={link.href} className="text-lg font-medium hover:text-primary">
@@ -70,7 +70,7 @@ export default function Header() {
                   </Link>
                 ))}
                 <Button asChild variant="default" className="mt-4 bg-accent hover:bg-accent/90 text-accent-foreground">
-                  <Link href="#contact">Request a Consultation</Link>
+                  <Link href="https://calendly.com/victordebelu/30min" target="_blank" rel="noopener noreferrer">Request a Consultation</Link>
                 </Button>
               </div>
             </SheetContent>

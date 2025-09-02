@@ -44,7 +44,7 @@ export default function Hero() {
               className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start"
             >
               <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                <Link href="#contact">Free Consultation</Link>
+                <Link href="https://calendly.com/victordebelu/30min" target="_blank" rel="noopener noreferrer">Free Consultation</Link>
               </Button>
               <Button asChild variant="outline" size="lg">
                 <Link href="#services">Our Services</Link>
