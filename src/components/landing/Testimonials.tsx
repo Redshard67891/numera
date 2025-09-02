@@ -1,6 +1,8 @@
+"use client";
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { motion } from "framer-motion";
 
 const testimonials = [
   {
@@ -8,23 +10,28 @@ const testimonials = [
     name: "Jane Doe",
     title: "CEO, Tech Innovators",
     avatar: "JD",
-    img: "https://placehold.co/100x100.png"
+    img: "https://picsum.photos/100/100?random=1"
   },
   {
     quote: "Tax season is no longer a stressful time for us, thanks to Numera. Their expertise and efficiency are second to none.",
     name: "John Smith",
     title: "Founder, Creative Co.",
     avatar: "JS",
-    img: "https://placehold.co/100x100.png"
+    img: "https://picsum.photos/100/100?random=2"
   },
   {
     quote: "The payroll services are a lifesaver. Everything is handled flawlessly, which lets me focus on my actual business.",
     name: "Samantha Lee",
     title: "Owner, The Local Cafe",
     avatar: "SL",
-    img: "https://placehold.co/100x100.png"
+    img: "https://picsum.photos/100/100?random=3"
   }
 ];
+
+const testimonialVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0 }
+};
 
 export default function Testimonials() {
   return (
@@ -44,8 +51,16 @@ export default function Testimonials() {
         >
           <CarouselContent>
             {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index} className="md:basis-1/2">
-                <div className="p-4">
+              <motion.div
+                key={index}
+                variants={testimonialVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="md:basis-1/2"
+              >
+                <CarouselItem className="p-4">
                   <Card className="h-full">
                     <CardContent className="flex flex-col items-center justify-center p-6 text-center h-full">
                       <p className="flex-grow text-foreground/80">"{testimonial.quote}"</p>
@@ -61,8 +76,8 @@ export default function Testimonials() {
                       </div>
                     </CardContent>
                   </Card>
-                </div>
-              </CarouselItem>
+                </CarouselItem>
+              </motion.div>
             ))}
           </CarouselContent>
           <CarouselPrevious className="hidden sm:flex" />

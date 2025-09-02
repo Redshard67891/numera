@@ -1,6 +1,8 @@
+"use client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BookOpenCheck, ReceiptText, Users, Lightbulb } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface Service {
   icon: LucideIcon;
@@ -31,6 +33,11 @@ const services: Service[] = [
   }
 ];
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 }
+};
+
 export default function Services() {
   return (
     <section id="services" className="py-12 sm:py-16 lg:py-24">
@@ -44,18 +51,27 @@ export default function Services() {
           </p>
         </div>
         <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map((service) => (
-            <Card key={service.title} className="text-center transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-              <CardHeader>
-                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                  <service.icon className="h-6 w-6 text-primary" />
-                </div>
-                <CardTitle className="mt-4 text-lg font-semibold">{service.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-foreground/70">{service.description}</p>
-              </CardContent>
-            </Card>
+          {services.map((service, index) => (
+            <motion.div
+              key={service.title}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.8 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <Card className="text-center transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                <CardHeader>
+                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+                    <service.icon className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="mt-4 text-lg font-semibold">{service.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/70">{service.description}</p>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
       </div>

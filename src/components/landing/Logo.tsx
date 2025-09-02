@@ -4,30 +4,22 @@ export function Logo({ className }: { className?: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 160 40"
+      viewBox="0 0 100 100"
       className={cn("fill-current", className)}
-      aria-label="Numera Logo"
+      aria-label="Erudite Logo"
     >
-      <path
-        d="M20,15 L20,0 L0,0 L0,15 L7,15 L7,2 L13,2 L13,15 L20,15 Z M35,15 L35,0 L28,0 L28,15 L35,15 Z M20,15 L0,30 L0,32 L20,17 L20,32 L27,32 L27,17 L7,32 L28,32 L48,17 L48,32 L55,32 L55,15 L35,32 L35,15 Z"
-        transform="translate(18, -10) scale(0.6)"
-        />
-      <path
-        d="M27.5,0 L35,12 L20,12 Z"
-        transform="translate(18, -10) scale(0.6)"
-        />
-
-      <text
-        x="5"
-        y="35"
-        fontFamily="sans-serif"
-        fontSize="10"
-        fontWeight="bold"
-        letterSpacing="1"
-        fill="currentColor"
-      >
-        NUMERA
-      </text>
+      <title>Erudite Logo</title>
+      {/* Book */}
+      <path d="M50 70C30 70 10 80 10 90V80C10 70 30 60 50 60C70 60 90 70 90 80V90C90 80 70 70 50 70Z" />
+      <path d="M50 70C30 70 10 80 10 90V85C10 75 30 65 50 65C70 65 90 75 90 85V90C90 80 70 70 50 70Z" />
+      
+      {/* Crown */}
+      <path d="M25 50C25 40 35 30 50 30C65 30 75 40 75 50" stroke="currentColor" strokeWidth="5" fill="none" />
+      <circle cx="25" cy="20" r="5" />
+      <circle cx="37" cy="15" r="5" />
+      <circle cx="50" cy="10" r="5" />
+      <circle cx="63" cy="15" r="5" />
+      <circle cx="75" cy="20" r="5" />
     </svg>
   );
 }
