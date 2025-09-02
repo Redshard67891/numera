@@ -2,11 +2,11 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Logo } from './Logo';
 
 const navLinks = [
   { href: '#services', label: 'Services' },
@@ -35,7 +35,7 @@ export default function Header() {
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2 text-primary">
-          <Image src="/numera-logo.svg" alt="Numera Logo" width={150} height={40} priority style={{ height: 'auto' }}/>
+          <Logo className="h-10 w-auto text-primary" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-6">
@@ -62,7 +62,7 @@ export default function Header() {
             <SheetContent side="right">
               <div className="flex flex-col gap-6 p-6">
                 <Link href="/" className="flex items-center gap-2 text-primary mb-4">
-                  <Image src="/numera-logo.svg" alt="Numera Logo" width={150} height={40} priority style={{ height: 'auto' }}/>
+                  <Logo className="h-10 w-auto text-primary" />
                 </Link>
                 {navLinks.map((link) => (
                   <Link key={link.href} href={link.href} className="text-lg font-medium hover:text-primary">

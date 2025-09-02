@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/image';
+import { Logo } from './Logo';
 
 export default function Footer() {
   return (
@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           <div>
             <Link href="/" className="flex items-center gap-2 text-primary">
-              <Image src="/numera-logo.svg" alt="Numera Logo" width={150} height={40} className="h-10" style={{ width: 'auto' }} />
+              <Logo className="h-10 w-auto text-primary" />
             </Link>
             <p className="mt-4 text-sm text-foreground/70">
               Your partner in financial success.
