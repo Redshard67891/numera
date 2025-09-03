@@ -54,7 +54,7 @@ export default function Hero() {
           <div className="relative h-64 w-full lg:h-auto lg:aspect-square">
             <Image
               src="https://picsum.photos/800/800"
-              alt="Financial charts and graphs"
+              alt="Business growth illustrated by financial charts and graphs"
               data-ai-hint="financial analytics"
               fill
               className="rounded-xl object-cover shadow-2xl"

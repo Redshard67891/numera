@@ -1,9 +1,10 @@
 import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
-const title = 'Numera Solutions - Tax & Bookkeeping';
-const description = 'Expert tax, bookkeeping, and financial consulting services to help your business thrive. Contact Numera Solutions for a free consultation.';
+const title = 'Numera Solutions | Expert Tax, Bookkeeping, & Payroll Services';
+const description = 'Numera Solutions offers expert tax preparation, bookkeeping, payroll, and financial consulting for small businesses. Simplify your finances and amplify your success. Get a free consultation today.';
 const url = 'https://numera.live';
 const imageUrl = 'https://picsum.photos/800/800';
 
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
         url: imageUrl,
         width: 800,
         height: 800,
-        alt: 'Numera Solutions',
+        alt: 'Numera Solutions Logo',
       },
     ],
     type: 'website',
@@ -48,6 +49,7 @@ export default function RootLayout({
       <body className="font-body antialiased">
         {children}
         <Toaster />
+        <SpeedInsights/>
       </body>
     </html>
   );

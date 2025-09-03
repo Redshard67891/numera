@@ -26,7 +26,7 @@ export default function About() {
           <div className="order-1 lg:order-2">
             <Image
               src="https://picsum.photos/800/600"
-              alt="Numera team discussion"
+              alt="The Numera Solutions team in a collaborative meeting"
               data-ai-hint="team meeting"
               width={800}
               height={600}
